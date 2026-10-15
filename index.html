@@ -123,7 +123,7 @@ figcaption{font-size:.8rem;color:var(--smoke);padding-top:.4rem;line-height:1.4}
 .v .src{margin-top:auto;padding-top:.3rem}
 .v.pick{border:2px solid var(--ember)}
 .flag{align-self:flex-start;background:var(--ember);color:#FFF8F3;font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem}
-.chip{display:inline-block;font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.04em;padding:.16rem .5rem;border:1px solid var(--pecan);color:var(--pecan);white-space:nowrap}
+.chip{display:inline-block;font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.04em;padding:.16rem .5rem;border:1px solid var(--pecan);color:var(--pecan);max-width:100%;overflow-wrap:anywhere}
 .chip.hot{background:var(--chip);color:var(--chip-ink);border-color:var(--chip)}
 .chip.warn{border-color:var(--ember);color:var(--ember)}
 a.score{display:inline-flex;gap:.35rem;align-items:baseline;font-family:var(--mono);font-size:.78rem;font-weight:600;text-decoration:none;
@@ -131,7 +131,7 @@ a.score{display:inline-flex;gap:.35rem;align-items:baseline;font-family:var(--mo
 a.score:hover{background:var(--bark);color:var(--paper)}
 a.score small{font-weight:400;opacity:.9}
 .noscore{font-family:var(--mono);font-size:.72rem;color:var(--smoke)}
-.walk{font-family:var(--mono);font-size:.74rem;font-weight:600;padding:.16rem .5rem;background:var(--sage);color:#FFFFFF}
+.walk{max-width:100%;font-family:var(--mono);font-size:.74rem;font-weight:600;padding:.16rem .5rem;background:var(--sage);color:#FFFFFF}
 
 /* tables */
 .tbl{overflow-x:auto;margin:1rem 0}
@@ -163,6 +163,7 @@ footer{border-top:4px double var(--pecan);margin-top:2rem;padding-block:1.4rem 3
 @media (prefers-reduced-motion:no-preference){ .v>img{transition:transform .5s ease} .v:hover>img{transform:scale(1.02)} }
 .maplink{font-family:var(--display);font-size:1.15rem;margin:1.2rem 0 .3rem}
 .maplink a{color:var(--ember)}
+html,body{overflow-x:clip}
 </style>
 <script>
 (function(){
@@ -172,6 +173,7 @@ footer{border-top:4px double var(--pecan);margin-top:2rem;padding-block:1.4rem 3
     document.querySelectorAll('.cityswitch button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-c')===c)); });
   }
   if(location.hash==='#dallas') set('dallas');
+  document.addEventListener('DOMContentLoaded',function(){ set(location.hash==='#dallas'?'dallas':'austin'); });
   document.addEventListener('click',function(e){
     var b=e.target.closest && e.target.closest('.cityswitch button'); if(!b) return;
     set(b.getAttribute('data-c'));
@@ -794,7 +796,7 @@ footer{border-top:4px double var(--pecan);margin-top:2rem;padding-block:1.4rem 3
 <img src="img/v-d-hotel-the-adolphus-autograph-collection.jpg" alt="The Adolphus, Autograph Collection" loading="lazy">
 <div class="in">
 <h4><a href="https://www.adolphus.com/" target="_blank" rel="noopener">The Adolphus, Autograph Collection</a></h4>
-<div class="row"><a class="noscore" href="https://www.tripadvisor.com/Search?q=The%20Adolphus%2C%20Autograph%20Collection%20Dallas" target="_blank" rel="noopener">Tripadvisor &rarr;</a><span class="chip">Autograph Collection (Marriott Bonvoy), verified on the hotel&#x27;s own site footer</span><span class="walk">2 on this page within a 10-min walk</span></div>
+<div class="row"><a class="noscore" href="https://www.tripadvisor.com/Search?q=The%20Adolphus%2C%20Autograph%20Collection%20Dallas" target="_blank" rel="noopener">Tripadvisor &rarr;</a><span class="chip">Autograph Collection</span><span class="walk">2 on this page within a 10-min walk</span></div>
 <p><b>Pool:</b> Rooftop pool, temperature-controlled, with cabanas and a fire; &#x27;now open daily&#x27;.</p>
 <p></p>
 <p>Dining on site includes Otto&#x27;s Coffee &amp; Fine Foods, City Hall Bistro, Rodeo Bar, The French Room and Tea at The Adolphus.</p>
