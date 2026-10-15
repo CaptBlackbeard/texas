@@ -21,4 +21,4 @@ A barbecue weekend plan for Austin or Dallas, Thursday 10 to Sunday 13 December 
 - The site is static HTML served by GitHub Pages; there is no build step in this repo.
 - Pages are marked `noindex`, so search engines are asked not to list them.
 - Photo credits and every source are listed at the bottom of the page.
-- Music: *Heliotrope Bouquet* by Louis Chauvin and Scott Joplin, played by John Robson. CC BY-SA 4.0, via Wikimedia Commons.
+- Music: *Sallie Johnson* and *Billy in the Low Ground*, traditional fiddle tunes played by Texas fiddler Eck Robertson (Victor, 1922). Public domain in the US, via Wikimedia Commons.
